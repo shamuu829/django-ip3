@@ -25,13 +25,14 @@ from django.contrib.auth.views import LogoutView, LoginView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('awardsapp.urls')),
-    path('accounts/',include('django_registration.backends.one_step.urls')),
-    path('accounts/register/', RegistrationView.as_view(success_url='/profile/'),name='django_registration_register'),
-    path('accounts/',include('django.contrib.auth.urls')),
-    path('accounts/', include('registration.backends.simple.urls')),
-    # path('logout/', views.logout, {"next_page": '/'}),
-    path('api-token-auth/', obtain_auth_token),
-    path('accounts/login', LoginView.as_view(redirect_field_name='/'), name = 'login'),
-    path('logout/', auth_views.LogoutView.as_view()),
+    path('accounts/register/',
+        RegistrationView.as_view(success_url='/email'),
+        name='django_registration_register'),
+    path('accounts/', include('django_registration.backends.one_step.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('logout/', auth_views.LogoutView.as_view()),  
+    path('accounts/login', LoginView.as_view(redirect_field_name ='/',success_url = '/'), name = 'login'),
+
+
     
 ]

@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'bootstrap4',
     'awardsapp',
-    'registration',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
