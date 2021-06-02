@@ -28,6 +28,7 @@ urlpatterns = [
         views.review_detail, name='review_detail'),
     # ex: /project/
     path('project', views.project_list, name='project_list'),
+
 ]
 
 

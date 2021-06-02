@@ -97,8 +97,11 @@ def new_image(request):
     return render(request, 'registration/new_image.html', {"form": form})
 
 
+
 @login_required(login_url='/accounts/login/')
+
 def new_project(request):
+
     current_user = request.user
     if request.method == 'POST':
         form = NewProjectForm(request.POST, request.FILES)
@@ -174,6 +177,9 @@ def search_image(request):
         else:
             message = "You haven't searched for any image"
             return render(request, 'search.html', {"message": message})
+
+
+
 
 # def search_users(request):
 #
