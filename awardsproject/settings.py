@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'awardsapp',
     'rest_framework',
+    'tinymce',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'awardsproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["awardsproject/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

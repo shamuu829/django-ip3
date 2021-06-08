@@ -15,5 +15,7 @@ urlpatterns = [
     path('accounts/',include('django.contrib.auth.urls')),
     path('login/', LoginView.as_view(), {"next_page": '/'}),
     path('accounts/',include('django_registration.backends.one_step.urls')),
+    path('tinymce/', include('tinymce.urls')),
+
 
 ]

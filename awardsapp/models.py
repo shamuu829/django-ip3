@@ -5,6 +5,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+
+
 # Create your models here.
 
 import datetime as dt
@@ -44,15 +46,15 @@ class Project(models.Model):
 
     def average_design(self):
         design_ratings = list(map(lambda x: x.design_rating, self.reviews.all()))
-        return np.mean(design_ratings)
+        return (design_ratings)
 
     def average_usability(self):
         usability_ratings = list(map(lambda x: x.usability_rating, self.reviews.all()))
-        return np.mean(usability_ratings)
+        return (usability_ratings)
 
     def average_content(self):
         content_ratings = list(map(lambda x: x.content_rating, self.reviews.all()))
-        return np.mean(content_ratings)
+        return (content_ratings)
 
     def save_project(self):
         self.save()
